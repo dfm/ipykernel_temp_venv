@@ -15,7 +15,7 @@ dynamic = ["version"]
 dependencies = ["jupyter_client"]
 
 [project.entry-points.'jupyter_client.kernel_provisioners']
-temp-env-provisioner = "jlab_temp_env.provisioner:TempEnvProvisioner"
+temp-env-provisioner = "jlab_temp_env:TempEnvProvisioner"
 
 [project.urls]
 "Homepage" = "https://github.com/dfm/jlab_temp_env"
@@ -33,7 +33,7 @@ build-backend = "hatchling.build"
 source = "vcs"
 
 [tool.hatch.build.hooks.vcs]
-version-file = "src/{{ python_project_name }}/_version.py"
+version-file = "src/jlab_temp_env/_version.py"
 
 [tool.black]
 target-version = ["py39"]
