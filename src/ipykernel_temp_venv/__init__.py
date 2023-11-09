@@ -1,0 +1,2 @@
+from ipykernel_temp_venv._version import __version__ as __version__
+from ipykernel_temp_venv.provisioner import TempVenvProvisioner as TempVenvProvisioner

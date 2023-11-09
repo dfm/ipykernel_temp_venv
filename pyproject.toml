@@ -1,6 +1,6 @@
 [project]
-name = "jlab_temp_env"
-description = "Temporary environments for JupyterLab"
+name = "ipykernel_temp_venv"
+description = "Launch IPython kernels within temporary virtual environments"
 authors = [{ name = "Dan Foreman-Mackey", email = "dfm@dfm.io" }]
 readme = "README.md"
 requires-python = ">=3.9"
@@ -12,15 +12,15 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
 ]
 dynamic = ["version"]
-dependencies = ["jupyter_client"]
+dependencies = ["jupyter_client", "ipykernel"]
 
 [project.entry-points.'jupyter_client.kernel_provisioners']
-temp-env-provisioner = "jlab_temp_env:TempEnvProvisioner"
+temp-venv-provisioner = "ipykernel_temp_venv:TempVenvProvisioner"
 
 [project.urls]
-"Homepage" = "https://github.com/dfm/jlab_temp_env"
-"Source" = "https://github.com/dfm/jlab_temp_env"
-"Bug Tracker" = "https://github.com/dfm/jlab_temp_env/issues"
+"Homepage" = "https://github.com/dfm/ipykernel_temp_venv"
+"Source" = "https://github.com/dfm/ipykernel_temp_venv"
+"Bug Tracker" = "https://github.com/dfm/ipykernel_temp_venv/issues"
 
 [project.optional-dependencies]
 test = ["pytest"]
@@ -33,7 +33,7 @@ build-backend = "hatchling.build"
 source = "vcs"
 
 [tool.hatch.build.hooks.vcs]
-version-file = "src/jlab_temp_env/_version.py"
+version-file = "src/ipykernel_temp_venv/_version.py"
 
 [tool.black]
 target-version = ["py39"]
@@ -47,5 +47,5 @@ ignore = []
 exclude = []
 
 [tool.ruff.isort]
-known-first-party = ["jlab_temp_env"]
+known-first-party = ["ipykernel_temp_venv"]
 combine-as-imports = true
